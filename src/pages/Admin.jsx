@@ -9,12 +9,12 @@ const Admin = () => {
   const { isAuthenticated, currentUser, isAdmin } = useAuth();
   
   // Use REACT_APP_API_URL environment variable or default to localhost
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
   
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await fetch(`${API_URL}/contacts`);
+        const response = await fetch(`${API_URL}/api/contacts`);
         const data = await response.json();
         
         if (data.success) {
