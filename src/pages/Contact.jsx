@@ -18,7 +18,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   // Use REACT_APP_API_URL environment variable or default to localhost
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
