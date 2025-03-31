@@ -1,0 +1,51 @@
+<html>
+
+<head>
+
+    <title>
+
+        Read CSV with Pandas using PyScript
+
+    </title>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+    <!---pyodide-->
+
+    <py-env>
+        - pandas
+        - matplotlib
+    </py-env>
+
+</head>
+
+<body>
+
+    <h1>Read CSV with Pandas using PyScript</h1>
+
+    <div id="csv"></div>
+
+    <py-script output="csv">
+
+        import matplotlib.pyplot as plt
+        import numpy as np
+        x1=np.array([1001,1003,1006,1007,1009,1011])
+        y1=np.array([10000, 23000.50,18000.33,16500.5,12000.75, 9999.99])
+        purchase_x = [1002, 1004, 1010, 1008, 1014, 1015]
+        purchase_y = [5000, 6000, 4500.5, 12000, 9000, 10000]
+        plt.bar(x1,y1,color='hotpink',label='smtg')
+        plt.bar(purchase_x,purchase_y,color='blue',label='nothing')
+        plt.xlabel('emp id')
+        plt.ylabel('salary')
+        plt.title('abc company')
+        plt.legend()
+        plt.grid()
+        plt.plot()
+        plt.show()
+
+    </py-script>
+
+</body>
+
+</html>

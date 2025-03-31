@@ -1,0 +1,288 @@
+/* Modern Theme for Eduzone */
+
+:root {
+  /* Main colors - orangish primary color based on original */
+  --primary: #fe7e5a;       /* Lighter version of original FE5D37 */
+  --primary-dark: #e5523f;  /* Darker shade of the orange */
+  --secondary: #8c98a8;     /* Light gray with blue undertone */
+  --dark: #074555;          /* Original dark color */
+  --light: #FFF5F3;         /* Original light color */
+  --light-hover: #ffe9e5;   /* Slightly darker for hover */
+  --white: #ffffff;
+  
+  /* Subject colors - lighter versions of original */
+  --python-color: #4e85b7;  /* Lighter blue for Python */
+  --fsd-color: #6eba76;     /* Lighter green for FSD */
+  --etc-color: #f2b05e;     /* Softer orange for ETC */
+  
+  /* Additional colors - softer but recognizable */
+  --info: #6da9e6;          /* Lighter blue */
+  --warning: #f5c26b;       /* Lighter amber */
+  --danger: #e66a6a;        /* Lighter red */
+  --success: #66c07a;       /* Lighter green */
+  
+  /* Background colors */
+  --bg-light: #FFF5F3;      /* Original light color */
+  --bg-light-hover: #ffe9e5; /* Slightly darker for hover */
+  --bg-gradient: linear-gradient(135deg, rgba(254, 126, 90, 0.7), rgba(254, 93, 55, 0.6));
+}
+
+/* Navigation styles */
+.navbar-scrolled {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+.nav-item .nav-link:hover {
+  color: var(--primary) !important;
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-light-hover);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+.btn-success {
+  background-color: var(--success) !important;
+  border-color: var(--success) !important;
+}
+
+.btn-warning {
+  background-color: var(--warning) !important;
+  border-color: var(--warning) !important;
+}
+
+.btn-info {
+  background-color: var(--info) !important;
+  border-color: var(--info) !important;
+}
+
+.btn-outline-primary {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  border-bottom: none;
+  padding: 1.25rem 1.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Background modifiers */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+.bg-info {
+  background-color: var(--info) !important;
+}
+
+.bg-warning {
+  background-color: var(--warning) !important;
+}
+
+.bg-success {
+  background-color: var(--success) !important;
+}
+
+.bg-light {
+  background-color: var(--bg-light) !important;
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.text-dark {
+  color: var(--dark) !important;
+}
+
+.text-success {
+  color: var(--success) !important;
+}
+
+.text-warning {
+  color: var(--warning) !important;
+}
+
+.text-info {
+  color: var(--info) !important;
+}
+
+/* Subject-specific styling */
+.python-theme {
+  --subject-color: var(--python-color);
+}
+
+.fsd-theme {
+  --subject-color: var(--fsd-color);
+}
+
+.etc-theme {
+  --subject-color: var(--etc-color);
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Helper classes */
+.shadow-sm {
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .05) !important;
+}
+
+.shadow {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) !important;
+}
+
+.rounded {
+  border-radius: 0.5rem !important;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Main content container padding adjustment */
+.content-wrapper {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* Gradient background for special sections */
+.gradient-bg {
+  background: var(--bg-gradient);
+  color: white;
+}
+
+/* User profile dropdown */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--light);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.profile-dropdown:hover .profile-dropdown-content,
+.profile-dropdown.active .profile-dropdown-content {
+  display: block;
+}
+
+.profile-dropdown-item {
+  padding: 0.5rem 1rem;
+  display: block;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.profile-dropdown-item:hover {
+  background-color: var(--light-hover);
+}
+
+.profile-dropdown-divider {
+  height: 1px;
+  margin: 0.5rem 0;
+  background-color: var(--light-hover);
+}
+
+/* Subject cards styling */
+.subject-card {
+  transition: all 0.35s ease;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.shadow-hover {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: all 0.35s ease;
+}
+
+.shadow-hover:hover {
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-7px);
+}
+
+.bg-soft-primary {
+  background-color: rgba(var(--bs-primary-rgb), 0.15);
+}
+
+.bg-soft-success {
+  background-color: rgba(var(--bs-success-rgb), 0.15);
+}
+
+.bg-soft-warning {
+  background-color: rgba(var(--bs-warning-rgb), 0.15);
+}
+
+.z-index-1 {
+  z-index: 1;
+} 
