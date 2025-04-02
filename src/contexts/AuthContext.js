@@ -3,6 +3,10 @@ import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL || 'https://eduzone-backend-production.up.railway.app/api';
 
+// Configure axios defaults
+axios.defaults.withCredentials = true;
+axios.defaults.headers.common['Access-Control-Allow-Credentials'] = true;
+
 const AuthContext = createContext();
 
 export function useAuth() {
