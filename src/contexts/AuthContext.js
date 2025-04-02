@@ -1,11 +1,10 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://eduzone-backend-production.up.railway.app/api';
+const API_URL = 'https://eduzone-backend-production.up.railway.app/api';
 
-// Configure axios defaults
-axios.defaults.withCredentials = true;
-axios.defaults.headers.common['Access-Control-Allow-Credentials'] = true;
+// Configure axios defaults for CORS
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 const AuthContext = createContext();
 
