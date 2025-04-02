@@ -1,10 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
+// API Configuration
 const API_URL = 'https://eduzone-backend-production.up.railway.app/api';
 
-// Configure axios defaults for CORS
-axios.defaults.headers.common['Content-Type'] = 'application/json';
+// Configure axios defaults
+const axiosInstance = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  }
+});
 
 const AuthContext = createContext();
 
@@ -56,7 +62,7 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     try {
       setError(null);
-      const response = await axios.post(`${API_URL}/auth/login`, { email, password });
+      const response = await axiosInstance.post('/auth/login', { email, password });
       
       if (response.data.success) {
         const { token, user } = response.data;
@@ -72,6 +78,7 @@ export function AuthProvider({ children }) {
         return { success: false, message: response.data.message };
       }
     } catch (error) {
+      console.error('Login error:', error);
       const errorMessage = error.response?.data?.message || 'An error occurred during login';
       setError(errorMessage);
       return { success: false, message: errorMessage };
