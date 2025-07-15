@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 // API Configuration
-const API_URL = 'https://eduzone-backend-production.up.railway.app/api';
+const API_URL = 'https://eduzone-backend.onrender.com/api';
 
 // Configure axios defaults
 const axiosInstance = axios.create({
