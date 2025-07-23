@@ -14,7 +14,13 @@ const Admin = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await fetch(`${API_URL}/api/contacts`);
+        const token = localStorage.getItem('eduzone_token');
+        const response = await fetch(`${API_URL}/api/contacts`, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
         const data = await response.json();
         
         if (data.success) {
